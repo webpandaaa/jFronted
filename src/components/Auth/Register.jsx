@@ -6,7 +6,7 @@ import { FaPenAlt, FaRegUser } from 'react-icons/fa';
 import { FaPhoneFlip} from 'react-icons/fa6';
 import {MdOutlineMailOutline} from 'react-icons/md';
 import { RiLock2Fill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -17,33 +17,33 @@ const Register = () => {
 
   const {isAuthorized , setisAuthorized , user , setuser} = useContext(Context);
 
-  const handleRegister = async (e) =>{
+  const handleRegister = async (e) => {
     e.preventDefault();
-    try{
-      const {data} = await axios.post(
+    try {
+      const { data } = await axios.post(
         "http://localhost:4000/api/user/register",
-        {name, email, password , phone, role},
+        { name, phone, email, role, password },
         {
-          withCredentials: true,
-          headers : {"Content-Type" : "application/json",
-
+          headers: {
+            "Content-Type": "application/json",
           },
-        },
+          withCredentials: true,
+        }
       );
       toast.success(data.message);
       setName("");
       setEmail("");
       setPassword("");
-      setRole("");
       setPhone("");
+      setRole("");
       setisAuthorized(true);
-    }catch(error){
+    } catch (error) {
       toast.error(error.response.data.message);
     }
   };
 
   if(isAuthorized){
-    return <Navigate to ={"/"}/>;
+    return <Navigate to={'/'}/>
   }
 
 
