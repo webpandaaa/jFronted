@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Context } from '../../main';
 import { Link, useNavigate } from 'react-router-dom';
 import {GiHamburgerMenu} from "react-icons/gi"
+import toast from 'react-hot-toast';
+import Register from '../Auth/Login';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -20,8 +22,9 @@ const Navbar = () => {
     }
   };
 
+
   return <>
-    <nav className={isAuthorized ? "navbarShow" : "navbarHide"} >
+    <nav className={isAuthorized ? "navbarShow" : "navbarHide" }>
         <div className='container'>
           <div className='logo'>
             <img src="Hireway.png" alt="logo" />

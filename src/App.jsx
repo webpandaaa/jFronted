@@ -31,11 +31,14 @@ const App = () => {
         const response = await axios.get("http://localhost:4000/api/user/getuser" , {withCredentials : true});
         setUser(response.data.user);
         setisAuthorized(true);
+        console.log(response.data)
       } catch (error){
         setisAuthorized(false);
       }
     };
     fetchUser();
+    // console.log(fetchUser)
+    
   } , [isAuthorized]);
 
 
