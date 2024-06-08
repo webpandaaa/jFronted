@@ -6,12 +6,12 @@ import App from './App.jsx'
 export const Context = createContext({isAuthorized : false});
  
 const AppWrapper = () => {
-  const [isAuthorized, setisAuthorized] = useState(false);
-  const [user, setuser] = useState({});
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [user, setUser] = useState({});
 
 
   return(
-    <Context.Provider value={{isAuthorized, setisAuthorized , user, setuser}}>
+    <Context.Provider value={{isAuthorized, setIsAuthorized , user, setUser}}>
        <App />
     </Context.Provider>
   );

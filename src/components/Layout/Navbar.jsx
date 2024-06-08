@@ -3,22 +3,23 @@ import { Context } from '../../main';
 import { Link, useNavigate } from 'react-router-dom';
 import {GiHamburgerMenu} from "react-icons/gi"
 import toast from 'react-hot-toast';
-import Register from '../Auth/Login';
+import axios from 'axios';
+
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const {isAuthorized , setisAuthorized , user} = useContext(Context);
+  const {isAuthorized , setIsAuthorized , user} = useContext(Context);
   const navigate = useNavigate();
 
   const handleLogout = async () =>{
-    try{
+    try {
       const response = await axios.get("http://localhost:4000/api/user/logout" , {withCredentials : true});
       toast.success(response.data.message);
-      setisAuthorized(false);
+      setIsAuthorized(false);
       navigate("/login");
     }catch(error){
       toast.error(error.response.data.message);
-      setisAuthorized(true);
+      setIsAuthorized(true);
     }
   };
 

@@ -2,8 +2,7 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Context } from '../../main';
 import toast from 'react-hot-toast';
-import { FaPenAlt, FaRegUser } from 'react-icons/fa';
-import { FaPhoneFlip} from 'react-icons/fa6';
+import { FaRegUser } from 'react-icons/fa';
 import {MdOutlineMailOutline} from 'react-icons/md';
 import { RiLock2Fill } from 'react-icons/ri';
 import { Link, Navigate } from 'react-router-dom';
@@ -13,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  const {isAuthorized , setisAuthorized , user , setuser} = useContext(Context);
+  const {isAuthorized , setIsAuthorized} = useContext(Context);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -32,13 +31,14 @@ const Login = () => {
       setEmail("");
       setPassword("");
       setRole("");
-      setisAuthorized(true);
-      console.log(isAuthorized);
+      setIsAuthorized(true);
+     
     } catch (error) {
       toast.error(error.response.data.message);
     }
   };
 
+  // console.log(isAuthorized);
   if(isAuthorized){
     return <Navigate to={'/'}/>
   }

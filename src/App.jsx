@@ -1,7 +1,7 @@
 import React, { useEffect , useContext } from "react"; 
 import "./App.css";
 import { Context} from "./main.jsx";
-import { BrowserRouter as Router , Route , Routes} from "react-router-dom";
+import { BrowserRouter , Route , Routes} from "react-router-dom";
 
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
@@ -21,30 +21,30 @@ import { Toaster } from "react-hot-toast";
 
 
 
-
 const App = () => {
-  const {isAuthorized , setisAuthorized , setUser} = useContext(Context);
-
-  useEffect(()=> {
-    const fetchUser = async() =>{
-      try{
-        const response = await axios.get("http://localhost:4000/api/user/getuser" , {withCredentials : true});
+  const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:4000/api/user/getuser",
+          {
+            withCredentials: true,
+          }
+        );
         setUser(response.data.user);
-        setisAuthorized(true);
-        console.log(response.data)
-      } catch (error){
-        setisAuthorized(false);
+        setIsAuthorized(true);
+      } catch (error) {
+        setIsAuthorized(false);
       }
     };
     fetchUser();
-    // console.log(fetchUser)
-    
-  } , [isAuthorized]);
+  }, [isAuthorized]);
 
 
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <Navbar/>
           <Routes>
             <Route path="/login" element={<Login/>}/>
@@ -60,7 +60,8 @@ const App = () => {
           </Routes>
         <Footer/>
         <Toaster/>
-      </Router>
+
+      </BrowserRouter>
     </>
   )
 }
