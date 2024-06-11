@@ -1,6 +1,33 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import {Context} from "../../main";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const Register = () => {
+const Jobs = () => {
+  const [jobs , setJobs] = useState([]);
+  const { isAuthorized } = useContext(Context);
+  const navigate = useNavigate();
+
+
+  useEffect(()=>{
+    try {
+      axios.get("" , 
+        { withCredentials : true }
+      ).then((res) => {
+        setJobs(res.data);
+      })
+      
+    } catch (error) {
+      console.log(error)
+    }
+
+  }, [])
+
+  if(!isAuthorized){
+    navigate("/login")
+  }
+  
+
   return (
     <>
       Jobs
@@ -8,4 +35,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Jobs
