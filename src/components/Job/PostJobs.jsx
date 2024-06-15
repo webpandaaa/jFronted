@@ -22,14 +22,14 @@ const PostJob = () => {
     e.preventDefault();
     if (salaryType === "Fixed Salary") {
       setSalaryFrom("");
-      setSalaryFrom("");
+      setSalaryTo("");
     } else if (salaryType === "Ranged Salary") {
       setFixedSalary("");
     } else {
       setSalaryFrom("");
       setSalaryTo("");
       setFixedSalary("");
-    }
+    } 
     await axios
       .post(
         "http://localhost:4000/api/job/postjob",
@@ -99,7 +99,7 @@ const PostJob = () => {
                   Frontend Web Development
                 </option>
                 <option value="MERN Stack Development">
-                  MERN STACK Development
+                  MERN Stack Development
                 </option>
                 <option value="Account & Finance">Account & Finance</option>
                 <option value="Artificial Intelligence">
@@ -107,10 +107,10 @@ const PostJob = () => {
                 </option>
                 <option value="Video Animation">Video Animation</option>
                 <option value="MEAN Stack Development">
-                  MEAN STACK Development
+                  MEAN Stack Development
                 </option>
                 <option value="MEVN Stack Development">
-                  MEVN STACK Development
+                  Data Analyist
                 </option>
                 <option value="Data Entry Operator">Data Entry Operator</option>
               </select>
