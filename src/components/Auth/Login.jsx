@@ -2,9 +2,6 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Context } from '../../main';
 import toast from 'react-hot-toast';
-import { FaRegUser } from 'react-icons/fa';
-import {MdOutlineMailOutline} from 'react-icons/md';
-import { RiLock2Fill } from 'react-icons/ri';
 import { Link, Navigate } from 'react-router-dom';
 
 const Login = () => {
@@ -46,26 +43,27 @@ const Login = () => {
 
   return (
     <>
-      <div className='authPage'>
-        <div className='container'>
-          <div className='header'>
-            <img src="/Hireway.png" alt="logo" />
+      <div className="loginpage">
+        <div className="left">
+          <h1>Welcome in HireWay</h1>
+        </div>
+        <div className="right">
+          <div className="container">
             <h3>Login Your Account</h3>
-          </div>
           <form >
+
             <div className='inputTag'> 
-              <label> Login As </label>
+              <h6> Login As </h6>
               <div>
                 <select value={role} onChange={(e) => setRole(e.target.value)}>
                   <option value="">Select</option>
                   <option value="Employer">Employer</option>
                   <option value="Job Seeker">Job Seeker</option>
                 </select>
-                <FaRegUser/>
               </div>
             </div>
+
             <div className='inputTag'>
-              <label>Email Address</label>
               <div>
                 <input 
                 type="email" 
@@ -73,11 +71,10 @@ const Login = () => {
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
                 />
-                <MdOutlineMailOutline/>
               </div>
             </div>
+
             <div className='inputTag'>
-              <label>Password</label>
               <div>
                 <input 
                 type="password" 
@@ -85,15 +82,15 @@ const Login = () => {
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
                 />
-                <RiLock2Fill/>
               </div>
             </div>
+
             <button onClick={handleLogin} type="submit">Login</button>
-            <Link to={'/register'}>Register Now</Link>
+            <p>don't have an account <Link to={'/register'}>Register Now</Link> </p>
+            
+
           </form>
-        </div>
-        <div className='banner'>
-          <img src="/login.png" alt="login" />
+          </div>
         </div>
       </div>
     </>
