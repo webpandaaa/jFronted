@@ -11,45 +11,7 @@
 ::-webkit-scrollbar {
   display: none;
 }
-h1 {
-  font-size: 4rem;
-} 
-h2 {
-  font-size: 3.4rem;
-}
-h3 {
-  font-size: 2.7rem;
-}
-h4 {
-  font-size: 2.2rem;
-}
-h5 {
-  font-size: 2rem;
-}
-h6 {
-  font-size: 1.5rem;
-}
-@media (max-width: 1520px) {
-  h1 {
-    font-size: 3.4rem;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  h3 {
-    font-size: 2.5rem;
-  }
-  h4 {
-    font-size: 2rem;
-  }
-  h5 {
-    font-size: 1.7rem;
-  }
-  h6 {
-    font-size: 1.3rem;
-  }
-}
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   h1 {
     font-size: 2.6rem;
   }
@@ -68,31 +30,60 @@ h6 {
   h6 {
     font-size: 1.15rem;
   }
+  .logout{
+    display: none;
+  }
 }
 
-.loginpage{
+
+/* loginpage and Register page */
+
+.authpage{
   width: 100%;
   height: 100%;
   display: flex;
   position: absolute;
 }
 
-.loginpage .left{
+.authpage .left{
   width: 40%;
   height: 100%;
   background-color: #1ACBA0;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10%;
-}
-
-.loginpage .left h1{
-  text-align: center;
+  padding: 5%;
+  position: relative;
   color: #fff;
 }
 
-.loginpage .right{
+.authpage .left h1{
+  text-align: start;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.authpage .left h6{
+  font-size: 18px;
+}
+
+.authpage .left .leftmid{
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  font-size: 20px;
+}
+
+.authpage .left .leftmid h4{
+  text-align: center;
+}
+
+.authpage .left .leftdown{
+  position: absolute;
+  top: 80%;
+  left: 12%;
+  font-size: 15px;
+}
+
+
+.authpage .right{
   width: 60%;
   height: 100%;
   background-color: #fff;
@@ -101,9 +92,9 @@ h6 {
   align-items: center;
 }
 
-.loginpage .right .container {
+.authpage .right .container {
   width: 50%;
-  height: 70%;
+  height: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -111,36 +102,40 @@ h6 {
   align-items: center;
 }
 
-.loginpage .right .container h3{
+.authpage .right .container img{
+  width: 80px;
+}
+
+.authpage .right .container h3{
   font-size: 30px;
   margin-bottom: 20px;
 }
 
-.loginpage .right .inputTag h6{
+.authpage .right .inputTag h6{
   margin-left: 30px;
   font-weight: 100;
   font-size: 15px;
   margin-bottom: 5px;
 }
 
-.loginpage .right select{
+.authpage .right select{
   width: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   margin-left: 20px;
   padding: 10px;
   border-radius: 20px;
   border: 2px solid #000000a7;
 }
 
-.loginpage .right input{
+.authpage .right input{
   width: 300px;
-  margin: 20px;
+  margin:  13px 20px;
   padding: 10px;
   border-radius: 20px;
   border: 2px solid #000000a7;
 }
 
-.loginpage .right button{
+.authpage .right button{
   width: 150px;
   padding: 8px;
   border-radius: 22px;
@@ -152,34 +147,28 @@ h6 {
   cursor: pointer;
 }
 
-.loginpage .right p{
+.authpage .right p{
   margin: 10px 30px;
 }
 
 @media (max-width : 600px) {
-  .loginpage .left{
+  .authpage .left{
     display: none;
   }
 
-  .loginpage .right{
+  .authpage .right{
     width: 100%;
   }
 
-  .loginpage .right .container {
+  .authpage .right .container {
     width: 100%;
   }
 
 }
 
-
-
-
-
-
-
-
+/* Footer */
 .footerShow {
-  background: #18191c;
+  background: #fff;
   display: flex;
   justify-content: space-between;
   padding: 25px 120px;
@@ -189,15 +178,16 @@ h6 {
   display: flex;
   gap: 12px;
   font-size: 16px;
-  color: #f1f3f6;
+  color: #1ACBA0;
+  font-weight: 500;
 }
 .footerShow div a {
   font-size: 20px;
   text-decoration: none;
-  color: #f1f3f6;
+  color: #1ACBA0;
 }
 .footerShow div a:hover {
-  color: #2d5649;
+  color: #1ACBA0;
   transform: scale(1.2);
   transition: all 0.3s;
 }
@@ -220,6 +210,9 @@ h6 {
   display: none;
 }
 
+
+/* Home Herosection */
+
 .heroSection {
   display: flex;
   flex-direction: column;
@@ -234,6 +227,8 @@ h6 {
 .heroSection .container {
   display: flex;
   height: 450px;
+  width: 100%;
+  padding: 20px;
   margin-bottom: 1.75rem;
 }
 .heroSection .container .title,
@@ -241,23 +236,34 @@ h6 {
   flex: 1;
 }
 .heroSection .container .title {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  padding: 20px;
 }
 .heroSection .container .title h1 {
   max-width: 600px;
+  font-size: 55px;
+}
+
+.heroSection .container .title h1 span {
+  color: #1ACBA0;
 }
 .heroSection .container .title p {
   margin-top: 1.5rem;
   max-width: 600px;
 }
 .heroSection .container .image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 .heroSection .container .image img {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  
 }
 .heroSection .details {
   display: flex;
@@ -348,6 +354,24 @@ h6 {
     max-width: 100%;
   }
 }
+@media (max-width: 600px) {
+  .heroSection .container .image img {
+    width: 70%;
+    display: none;
+}
+.heroSection .container .title{
+  width: 100%;
+  text-align: start;
+  font-size: 15px;
+} 
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0 50px 0;
+}
+}
+
+
 .howitworks {
   background: #f1f3f6;
 }
@@ -422,6 +446,12 @@ h6 {
   padding: 50px 0;
   gap: 35px;
 }
+
+.categories h3{
+  text-align: center;
+  font-size: 30px;
+}
+
 .categories .banner {
   display: flex;
   flex-wrap: wrap;
@@ -494,6 +524,10 @@ h6 {
   flex-direction: column;
   align-items: center;
   gap: 35px;
+}
+.companies .container h3{
+  text-align: center;
+  font-size: 30px;
 }
 .companies .container .banner {
   display: flex;
@@ -568,7 +602,7 @@ h6 {
   }
 }
 .jobs {
-  background: #f1f3f6;
+  background: #fff;
   min-height: 100vh;
   padding: 50px 20px;
 }
@@ -581,6 +615,9 @@ h6 {
   margin: 0 auto;
   gap: 35px;
 }
+.jobs .container h1{
+  font-size: 30px;
+}
 .jobs .container .banner {
   display: flex;
   flex-wrap: wrap;
@@ -590,7 +627,7 @@ h6 {
   padding: 30px 0;
 }
 .jobs .container .banner .card {
-  background: #fff;
+  background: #f1f3f6;
   text-decoration: none;
   width: 320px;
   height: 220px;
@@ -599,12 +636,13 @@ h6 {
   flex-direction: column;
   gap: 10px;
   justify-content: center;
+  border-radius: 20px;
 }
 .jobs .container .banner .card:hover {
   transition: all 0.3s;
   box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
-  -webkit-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
-  -moz-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+  /* -webkit-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17); */
 }
 .jobs .container .banner .card p:first-child {
   font-weight: bold;
@@ -621,12 +659,17 @@ h6 {
 .jobs .container .banner .card a {
   text-decoration: none;
   padding: 7px;
-  font-size: 20px;
+  font-size: 15px;
   color: #2d5649;
-  background: rgb(233, 249, 255);
+  background: #a4f7e3;
+  border-radius: 20px;
   width: 100%;
   display: block;
   text-align: center;
+  transition: all ease .3s;
+}
+.jobs .container .banner .card a:hover{
+  scale: .9;
 }
 @media (max-width: 1520px) {
   .jobs .container {
@@ -645,7 +688,7 @@ h6 {
 }
 
 .jobDetail {
-  background: #f1f3f6;
+  background: #fff;
   padding: 50px 20px;
 }
 .jobDetail .container {
@@ -656,10 +699,14 @@ h6 {
   flex-direction: column;
   align-items: center;
 }
+
+.jobDetail .container h3{
+  font-size: 30px;
+}
 .jobDetail .container .banner {
   width: 100%;
-  min-height: 767px;
-  padding: 50px 0;
+  min-height: 500px;
+  padding: 0px 100px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -674,19 +721,25 @@ h6 {
   font-weight: 400;
 }
 .jobDetail .container .banner a {
-  background-color: #2d5649;
+  background-color: #1ACBA0;
   color: rgb(233, 249, 255);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   border: none;
   padding: 12px 30px;
   text-decoration: none;
   margin-top: 10px;
   width: fit-content;
+  border-radius: 20px;
 }
 @media (max-width: 1520px) {
   .jobDetail .container {
     min-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .jobDetail .container .banner  {
+    padding: 0px 0px;
   }
 }
 .application {
@@ -702,25 +755,29 @@ h6 {
   text-align: center;
   padding: 50px 20px;
 }
+.application .container h3{
+  font-size: 25px;
+}
 .application .container form {
   display: flex;
   flex-direction: column;
   width: 550px;
   padding: 40px 20px;
-  gap: 25px;
+  gap: 20px;
   margin: 0 auto;
   margin-top: 35px;
 }
 .application .container form input {
   border: none;
-  font-size: 20px;
+  font-size: 15px;
   border-bottom: 1px solid black;
   padding: 12px 4px;
 }
 .application .container form textarea {
   width: 100%;
-  height: 200px;
-  font-size: 20px;
+  height: 80px;
+  resize: none;
+  font-size: 15px;
   padding: 12px 4px;
 }
 .application .container form input:focus,
@@ -728,17 +785,19 @@ h6 {
   outline: none;
 }
 .application .container form button {
-  background-color: #2d5649;
-  color: rgb(233, 249, 255);
-  font-size: 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 15px;
   font-weight: 400;
-  border: none;
+  border: 2px solid #1ACBA0;
   padding: 12px 30px;
   text-decoration: none;
   width: 100%;
+  border-radius: 20px;
 }
 .application .container form button:hover {
-  background-color: #184235;
+  background-color: #1ACBA0;
+  color: #fff;
   transition: all 0.3s;
   cursor: pointer;
 }
@@ -751,7 +810,7 @@ h6 {
   }
 }
 .my_applications {
-  background: #f1f3f6;
+  background: #fff;
   padding: 50px 20px;
   min-height: 885px;
 }
@@ -763,12 +822,20 @@ h6 {
   flex-direction: column;
   gap: 35px;
 }
+
+.my_applications .container h1{
+  text-align: center;
+}
+
 .job_seeker_card {
   display: flex;
   align-items: center;
   border-bottom: 1px solid gainsboro;
-  padding: 20px 0;
+  padding: 20px;
+  border-bottom: 2px solid #605f5fd3;
+  border-top: 2px solid #605f5fd3;
 }
+
 .job_seeker_card .detail {
   flex: 3;
   display: flex;
@@ -788,7 +855,7 @@ h6 {
 }
 .job_seeker_card .resume {
   position: relative;
-  height: 250px;
+  height: 150px;
 }
 .job_seeker_card .resume img {
   width: auto;
@@ -804,13 +871,23 @@ h6 {
   justify-content: center;
 }
 .job_seeker_card .btn_area button {
-  background: #d9534f;
-  color: #fff;
-  border: none;
+  background: #fff;
+  color: #d9534f;
+  border: 2px solid #d9534f;
   padding: 10px 30px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all ease .3s;
 }
+
+.job_seeker_card .btn_area button:hover{
+  background-color: #d9534f;
+  color: #fff;
+}
+  
+
 @media (max-width: 1520px) {
   .my_applications .container {
     min-width: 100%;
@@ -850,11 +927,17 @@ h6 {
     width: 100%;
   }
 }
+@media (max-width: 600px) {
+  .my_applications .container h1 {
+    text-align: center;
+    font-size: 20px;
+}
+}
 
 .job_post {
-  background: #f1f3f6;
+  background: #fff;
   padding: 50px 20px;
-  min-height: 870px;
+  min-height: 660px;
   display: flex;
   align-items: center;
 }
@@ -880,7 +963,7 @@ h6 {
 .job_post .container form .wrapper input,
 .job_post .container form .wrapper select {
   flex: 1;
-  font-size: 20px;
+  font-size: 15px;
   padding: 7px 4px;
   border: none;
   background: transparent;
@@ -888,7 +971,7 @@ h6 {
 }
 .job_post .container form input,
 .job_post .container form textarea {
-  font-size: 20px;
+  font-size: 15px;
   padding: 7px 4px;
   width: 100%;
   background: transparent;
@@ -909,12 +992,12 @@ h6 {
 }
 .job_post .container form .salary_wrapper p {
   color: #d9534f;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
 }
 .job_post .container form .salary_wrapper select {
   width: fit-content;
-  font-size: 20px;
+  font-size: 15px;
   padding: 7px 4px;
   background: transparent;
   border: none;
@@ -925,15 +1008,23 @@ h6 {
   gap: 5vw;
 }
 .job_post .container form button {
-  width: 100%;
-  background: #2d5649;
-  font-size: 20px;
+  /* width: 10%; */
+  background: #1ACBA0;
+  font-size: 15px;
   padding: 10px 30px;
   border: none;
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.job_post .container .crtbtn{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 1520px) {
   .job_post .container {
@@ -955,7 +1046,7 @@ h6 {
   }
 }
 .myJobs {
-  background: #f1f3f6;
+  background: #fff;
   padding: 50px 20px;
   min-height: 870px;
 }
@@ -1012,19 +1103,19 @@ h6 {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 .myJobs .container .banner .card .content .long_field {
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0px;
 }
 .myJobs .container .banner .card .content .short_fields div,
 .myJobs .container .banner .card .content .long_field div {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0px;
 }
 .myJobs .container .banner .card .content .short_fields div div {
   display: flex;
@@ -1066,16 +1157,29 @@ h6 {
   text-transform: uppercase;
   padding: 7px;
   border: none;
-  background: #ffc107;
+  background: #fff;
+  border: 2px solid #1ACBA0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all ease .2s;
+}
+.myJobs .container .banner .card .button_wrapper .edit_btn:hover{
+  background-color: #1ACBA0;
+  color: #fff;
 }
 .myJobs .container .banner .card .button_wrapper .delete_btn {
-  background: #d9534f;
-  color: #f1f3f6;
+  background: #fff;
+  color: #000;
+  border: 2px solid #f08d89;
+}
+.myJobs .container .banner .card .button_wrapper .delete_btn:hover{
+  background-color: #f08d89;
+  color: #fff;
 }
 .myJobs .container .banner .card .button_wrapper .check_btn {
   background: transparent;
-  color: #184235;
-  border: 1px solid #184235;
+  color: #1ACBA0;
+  border: 1px solid #1ACBA0;
   border-radius: 7px;
   width: 50px;
   padding: 8px;
@@ -1086,7 +1190,7 @@ h6 {
 }
 .myJobs .container .banner .card .button_wrapper .check_btn:hover {
   transition: all 0.3s;
-  background: #184235;
+  background: #1ACBA0;
   color: #f1f3f6;
 }
 .myJobs .container .banner .card .button_wrapper .cross_btn {
@@ -1131,62 +1235,69 @@ h6 {
     gap: 8px;
   }
 }
+
 nav {
-  background: #18191c;
-  padding: 0 20px;
+  /* background: red; */
+  padding: 20px 10px;
+  background-color: #fff;
+  /* border-bottom: 2px solid #1ACBA0; */
 }
 nav .container {
   max-width: 1500px;
   min-width: 1500px;
+  height: 70px;
   margin: 0 auto;
   display: flex;
+  padding: 0px 20px;
   justify-content: space-between;
 }
 nav .container .logo {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-nav .container .logo img {
-  width: 100%;
-  height: 100%;
-}
+
 nav .menu {
   display: flex;
   gap: 25px;
   align-items: center;
 }
-nav .menu button {
+nav button {
   height: fit-content;
-  padding: 7px;
+  padding: 10px 20px;
   border: 1px solid #f1f3f6;
-  color: #f1f3f6;
-  background: transparent;
-  font-size: 20px;
+  color: #fff;
+  background: #1ACBA0;
+  font-size: 15px;
   font-weight: 300;
+  margin-top: 15px;
+  border-radius: 20px;
 }
-nav .menu button:hover {
+nav  button:hover {
   color: #f1f3f6;
-  background: #184235;
+  background: #1ACBA0;
   transition: all 0.3s;
   cursor: pointer;
   font-weight: 500;
-  border: 1px solid #184235;
+  border: 1px solid #1ACBA0;
 }
 nav .menu li a {
-  color: #f1f3f6;
+  color: #000;
   text-decoration: none;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 17px;
   position: relative;
 }
 nav .menu li a:hover {
-  color: #2d5649;
+  color: #1ACBA0;
   transition: all 0.3s;
 }
 nav .menu li a::before {
   content: "";
   position: absolute;
-  background: #184235;
+  background: #1ACBA0;
   height: 1px;
   width: 100%;
   left: -100%;
@@ -1219,7 +1330,7 @@ nav .hamburger {
   nav .hamburger {
     display: block;
     font-size: 35px;
-    color: #f1f3f6;
+    color: #1ACBA0;
   }
   nav .container {
     align-items: center;

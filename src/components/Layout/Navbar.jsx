@@ -28,7 +28,7 @@ const Navbar = () => {
     <nav className={isAuthorized ? "navbarShow" : "navbarHide" }>
         <div className='container'>
           <div className='logo'>
-            <img src="Hireway.png" alt="logo" />
+            <img src="/logoname.png" alt="logo" />
           </div>
           <ul className={!show ? "menu" : "show-menu menu" }>
             <li>
@@ -44,8 +44,8 @@ const Navbar = () => {
             <li>
             <Link to={"/application/me"} onClick={() => setShow(false)}>
               { user && user.role === "Employer"
-              ? "APPLICANT'S APPLICATIONS"
-              : "MY APPLICATIONS"
+              ? "Applications"
+              : "My applications"
               }
             </Link>
             </li>
@@ -53,19 +53,19 @@ const Navbar = () => {
               <>
               <li>
                 <Link to={"/job/post"}  onClick={() => setShow(false)}>
-                  Post new Job
+                  Post Job
                 </Link>
               </li>
               <li>
               <Link to={"/job/me"}  onClick={() => setShow(false)}>
-                  View your Jobs
+                  View Jobs
                 </Link>
               </li>
               </>
             ) : ( <></>
             )}
-            <button onClick={handleLogout}>Logout</button>
           </ul>
+            <button className='logout' onClick={handleLogout}>Logout</button>
           <div className='hamburger'>
             <GiHamburgerMenu onClick={()=>setShow(!show)}/>
           </div>

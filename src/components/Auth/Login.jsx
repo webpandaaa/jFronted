@@ -43,12 +43,22 @@ const Login = () => {
 
   return (
     <>
-      <div className="loginpage">
+      <div className="authpage">
         <div className="left">
-          <h1>Welcome in HireWay</h1>
+          <div className='leftup'>
+            <h1>HireWay</h1>
+            <h6>Search, Apply & <br /> Get your Dream Job</h6>
+          </div>
+          <div className='leftmid'>
+            <h4 >Thankyou for login account</h4>
+          </div>
+          <div className='leftdown'>
+            <h4>Created by Ankush</h4>
+          </div>
         </div>
         <div className="right">
           <div className="container">
+          <img src="logo.png" alt="" />
             <h3>Login Your Account</h3>
           <form >
 
