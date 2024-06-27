@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
@@ -32,7 +32,7 @@ const PostJob = () => {
     } 
     await axios
       .post(
-        "http://localhost:4000/api/job/postjob",
+        "https://jbackend.onrender.com/api/job/postjob",
         fixedSalary.length >= 4
           ? {
               title,

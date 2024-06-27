@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { Context } from '../../main';
-import { Link, useNavigate } from 'react-router-dom';
-import {GiHamburgerMenu} from "react-icons/gi"
-import toast from 'react-hot-toast';
 import axios from 'axios';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Link, useNavigate } from 'react-router-dom';
+import { Context } from '../../main';
 
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const handleLogout = async () =>{
     try {
-      const response = await axios.get("http://localhost:4000/api/user/logout" , {withCredentials : true});
+      const response = await axios.get("https://jbackend.onrender.com/api/user/logout" , {withCredentials : true});
       toast.success(response.data.message);
       setIsAuthorized(false);
       navigate("/login");
@@ -64,6 +64,7 @@ const Navbar = () => {
               </>
             ) : ( <></>
             )}
+            <button id="impbtn" onClick={handleLogout}>Logout</button>
           </ul>
             <button className='logout' onClick={handleLogout}>Logout</button>
           <div className='hamburger'>

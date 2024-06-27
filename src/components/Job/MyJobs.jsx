@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaCheck } from 'react-icons/fa';
 import { RxCross2 } from "react-icons/rx";
-import { Context } from '../../main';
 import { useNavigate } from 'react-router-dom';
+import { Context } from '../../main';
 
 const MyJobs = () => {
 
@@ -19,7 +19,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/job/getmyJobs",
+          "https://jbackend.onrender.com/api/job/getmyJobs",
           { withCredentials: true }
         );
         setMyJobs(data.myjobs);
@@ -50,7 +50,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`http://localhost:4000/api/job/updatejob/${jobId}`, updatedJob, {
+      .put(`https://jbackend.onrender.com/api/job/updatejob/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -65,7 +65,7 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`http://localhost:4000/api/job/deletejob/${jobId}`, {
+      .delete(`https://jbackend.onrender.com/api/job/deletejob/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {

@@ -1,19 +1,19 @@
-import React, { useEffect , useContext } from "react"; 
+import React, { useContext, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Context} from "./main.jsx";
-import { BrowserRouter , Route , Routes} from "react-router-dom";
+import { Context } from "./main.jsx";
 
-import Login from "./components/Auth/Login";
-import Register from "./components/Auth/Register";
-import Navbar from "./components/Layout/Navbar";
-import Footer from "./components/Layout/Footer.jsx";
-import Home from "./components/Home/Home.jsx";
-import Jobs from "./components/Job/Jobs.jsx";
-import JobDetails from "./components/Job/JobDetails.jsx";
-import MyJobs from "./components/Job/MyJobs.jsx";
-import PostJobs from "./components/Job/PostJobs.jsx";
 import Application from "./components/Applications/Application.jsx";
 import MyApplication from "./components/Applications/MyApplication.jsx";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
+import Home from "./components/Home/Home.jsx";
+import JobDetails from "./components/Job/JobDetails.jsx";
+import Jobs from "./components/Job/Jobs.jsx";
+import MyJobs from "./components/Job/MyJobs.jsx";
+import PostJobs from "./components/Job/PostJobs.jsx";
+import Footer from "./components/Layout/Footer.jsx";
+import Navbar from "./components/Layout/Navbar";
 import NotFound from "./components/NotFound/NotFound.jsx";
 
 import axios from "axios";
@@ -27,7 +27,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/user/getuser",
+          "https://jbackend.onrender.com/api/user/getuser",
           {
             withCredentials: true,
           }

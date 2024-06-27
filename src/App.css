@@ -1311,6 +1311,14 @@ nav .menu li a:hover::before {
 nav .hamburger {
   display: none;
 }
+nav #impbtn{
+  display: none;
+}
+@media (max-width: 600px){
+  nav #impbtn{
+    display: initial;
+  }
+}
 @media (max-width: 1520px) {
   nav .container {
     min-width: 100%;

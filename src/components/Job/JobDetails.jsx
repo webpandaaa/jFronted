@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Context } from "../../main";
 
 const JobDetails = () => {
@@ -13,7 +12,7 @@ const JobDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/job/${id}`, {
+      .get(`https://jbackend.onrender.com/api/job/${id}`, {
         withCredentials: true,
       })
       .then((res) => {

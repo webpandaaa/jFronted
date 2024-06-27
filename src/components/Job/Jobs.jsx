@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
-import {Context} from "../../main";
-import { useNavigate , Link } from 'react-router-dom';
 import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Context } from "../../main";
 
 const Jobs = () => {
   const [jobs , setJobs] = useState([]);
@@ -11,7 +11,7 @@ const Jobs = () => {
 
   useEffect(()=>{
     try {
-      axios.get("http://localhost:4000/api/job/getall" , 
+      axios.get("https://jbackend.onrender.com/api/job/getall" , 
         { withCredentials : true }
       ).then((res) => {
         setJobs(res.data);

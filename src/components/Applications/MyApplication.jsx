@@ -1,8 +1,8 @@
-import React, { useContext, useState , useEffect } from 'react'
-import {Context} from "../../main";
 import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { Context } from "../../main";
 import ResumeModal from './ResumeModel';
 
 const MyApplication = () => {
@@ -17,7 +17,7 @@ const MyApplication = () => {
     try {
       if (user && user.role === "Employer") {
         axios
-          .get("http://localhost:4000/api/application/employer/getall", {
+          .get("https://jbackend.onrender.com/api/application/employer/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -25,7 +25,7 @@ const MyApplication = () => {
           });
       } else {
         axios
-          .get("http://localhost:4000/api/application/jobseeker/getall", {
+          .get("https://jbackend.onrender.com/api/application/jobseeker/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -44,7 +44,7 @@ const MyApplication = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`http://localhost:4000/api/application//delete/${id}`, {
+        .delete(`https://jbackend.onrender.com/api/application//delete/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
