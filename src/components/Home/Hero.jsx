@@ -33,7 +33,7 @@ const Hero = () => {
       <div className='container'>
         <div className='title'>
           <h1>Find a <span>Job</span> that suits</h1> 
-          <h1>Your interest and <br /> skills</h1>
+          <h1>Your interest and  skills</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, officiis? Aspernatur iure, debitis omnis perferendis quaerat earum doloribus quod, alias impedit cum ipsa nihil sit. Cupiditate, ratione! Praesentium, voluptate dignissimos?</p>
         </div>
         <div className='image'>
